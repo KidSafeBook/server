@@ -1,0 +1,31 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Application server",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env NODE_ENV=development &&  nodemon -r dotenv/config ./src/server.js",
+    "build:dev": "set NODE_ENV=development"
+  },
+  "keywords": [],
+  "author": "Chris Johannesson",
+  "email": "chris@chrisjohannesson.com",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-router": "^0.0.1",
+    "uuid": "^9.0.1",
+    "xss": "^1.0.15"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.0.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-jsdoc": "^48.2.3",
+    "nodemon": "^3.1.0"
+  }
+}

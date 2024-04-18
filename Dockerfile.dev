@@ -1,0 +1,29 @@
+# Use Ubuntu as the base image
+FROM ubuntu:latest
+
+# Update and install curl and gnupg, necessary for the Node.js install
+# RUN apt-get update && apt-get install -y curl gnupg
+
+# Install Node.js and npm
+RUN apt-get update && apt-get install -y curl software-properties-common
+RUN curl -sL https://deb.nodesource.com/setup_20.x | bash -
+RUN apt-get update && apt-get install -y nodejs
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Install dependencies
+COPY package*.json ./
+RUN npm install
+
+# Copy the current directory contents into the container at /app
+COPY . .
+
+# Build react application in development mode
+# RUN npm run build:dev
+
+# Make port 3001 available to the world outside this container
+EXPOSE 3010
+
+# Run the app using nodemon
+CMD ["npm", "run", "dev"]
