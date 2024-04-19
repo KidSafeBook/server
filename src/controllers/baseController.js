@@ -2,23 +2,31 @@ import Post from "../common/post.js";
 // import Comment from "../../../common/comment.js";
 
 const baseControllerGet = (req, res, next) => {
-  console.log("baseControllerGet called");
-  // console.log(res);
-  const postId = "wqeqw123";
-  const authorId = "1234";
-  const content = "Post content here ...";
-  const comments = [];
-  const likes = 2;
-  const dislikes = 1;
-  
-  const post = new Post(postId, authorId, content, comments, likes, dislikes) ;
+  // console.log("baseControllerGet called");
+  const post = {
+    postId: "wqeqw123",
+    authorId: "1234",
+    content: "Post content here ...",
+    comments: [],
+    likes: 2,
+    dislikes: 1
+  };
 
-  console.log(post.content);
+  const post1 = {
+    postId: "wqeqw456",
+    authorId: "6543",
+    content: "Post new post content here ...",
+    comments: [],
+    likes: 3,
+    dislikes: 5
+  };
 
-  const response = [post]
-  
+  const response = [post, post1]
 
-  res.status(200).json({data: response});
+  console.log(response)
+
+
+  res.status(200).json({ data: response });
 };
 
 export default baseControllerGet;
