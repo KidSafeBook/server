@@ -6,6 +6,7 @@ const baseControllerGet = (req, res, next) => {
   const post = {
     postId: "wqeqw123",
     authorId: "1234",
+    title: "Post 1 title here ...",
     content: "Post content here ...",
     comments: [],
     likes: 2,
@@ -15,6 +16,7 @@ const baseControllerGet = (req, res, next) => {
   const post1 = {
     postId: "wqeqw456",
     authorId: "6543",
+    title: "Post 2 title here ...",
     content: "Post new post content here ...",
     comments: [],
     likes: 3,
@@ -23,7 +25,7 @@ const baseControllerGet = (req, res, next) => {
 
   const response = [post, post1]
 
-  console.log(response)
+  // console.log(response)
 
 
   res.status(200).json({ data: response });
