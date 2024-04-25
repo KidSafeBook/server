@@ -1,0 +1,5 @@
+extend type Mutation {
+    createPost(content: String!): Post
+    updatePost(postId: ID!, content: String!): Post
+    deletePost(postId: ID!): Post
+}

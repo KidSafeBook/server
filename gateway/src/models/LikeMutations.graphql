@@ -1,0 +1,4 @@
+extend type Mutation {
+    likePost(postId: ID!): Like
+    likeComment(commentId: ID!): Like
+}

@@ -1,0 +1,8 @@
+type User {
+    id: ID!
+    username: String!
+    posts: [Post]
+    friends: [User]
+    isChild: Boolean!
+    parent: User
+}

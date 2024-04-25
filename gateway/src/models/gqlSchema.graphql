@@ -1,0 +1,35 @@
+
+
+
+
+
+
+
+
+type Query {
+    user(id: ID!): User
+    postsByUser(userId: ID!): [Post]
+    commentsOnPost(postId: ID!): [Comment]
+}
+
+type Mutation {
+    createPost(content: String!): Post
+    updatePost(postId: ID!, content: String!): Post
+    deletePost(postId: ID!): Post
+    createComment(postId: ID!, content: String!): Comment
+    updateComment(commentId: ID!, content: String!): Comment
+    deleteComment(commentId: ID!): Comment
+    likePost(postId: ID!): Like
+    likeComment(commentId: ID!): Like
+}
+
+type Subscription {
+    postAdded: Post
+    postUpdated: Post
+    postDeleted: Post
+    commentAdded: Comment
+    commentUpdated: Comment
+    commentDeleted: Comment
+    postLiked: Like
+    commentLiked: Like
+}

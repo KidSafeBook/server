@@ -1,0 +1,5 @@
+extend type Subscription {
+    postAdded: Post
+    postUpdated: Post
+    postDeleted: Post
+}
